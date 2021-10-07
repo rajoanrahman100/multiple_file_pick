@@ -57,7 +57,7 @@ class HomePage extends StatelessWidget{
                   // allowedExtensions: ['pdf','mp4']
                   );
                 if(results==null){
-                  log("No File Pick Up");
+                  debugPrint("No File Pick Up");
                   return;
                 }
                 else{
