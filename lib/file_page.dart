@@ -42,7 +42,7 @@ class FilePage extends StatelessWidget {
                       child: Text(".${file[index]!.extension}"),
                     ),
                   ),
-                  title: Text("${file[index]!.name}"),
+                  title: Text(file[index]!.name),
                   trailing: Text(fileSize),
                   onTap: (){
                     OpenFile.open(file[index]!.path);

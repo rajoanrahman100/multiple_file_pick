@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget{
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("File Picker"),
+        title: const Text("File Picker"),
       ),
       body: Center(
         child: Padding(
@@ -49,7 +49,13 @@ class HomePage extends StatelessWidget{
               },color: Colors.amber,shape: const StadiumBorder(),child: const Text("Pick File"),),
 
               MaterialButton(onPressed:()async{
-                final results=await FilePicker.platform.pickFiles(allowMultiple: true);
+                final results=await FilePicker.platform.pickFiles(
+                  allowMultiple: true,
+                  //Custom type file
+                   
+                  // type: FileType.custom,
+                  // allowedExtensions: ['pdf','mp4']
+                  );
                 if(results==null){
                   log("No File Pick Up");
                   return;
